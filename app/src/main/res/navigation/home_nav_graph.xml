@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navigation_home_activity.xml"
+    app:startDestination="@id/navigation_home">
+    <fragment
+        android:id="@+id/navigation_home"
+        android:name="com.jdars.shared_online_business.Fragments.HomeFragment"
+        android:label="@string/str_home"
+        tools:layout="@layout/fragment_home" />
+    <fragment
+        android:id="@+id/navigation_category"
+        android:name="com.jdars.shared_online_business.Fragments.CategoryFragment"
+        android:label="@string/str_category"
+        tools:layout="@layout/fragment_category" />
+    <fragment
+        android:id="@+id/navigation_sell"
+        android:name="com.jdars.shared_online_business.Fragments.SellFragment"
+        android:label="@string/str_sell"
+        tools:layout="@layout/fragment_sell" />
+    <fragment
+        android:id="@+id/navigation_account"
+        android:name="com.jdars.shared_online_business.Fragments.AccountFragment"
+        android:label="@string/str_account"
+        tools:layout="@layout/fragment_account" />
+    <fragment
+        android:id="@+id/navigation_whishlist"
+        android:name="com.jdars.shared_online_business.Fragments.WhishlistFragment"
+        android:label="@string/str_whishlist"
+        tools:layout="@layout/fragment_whishlist" />
+</navigation>

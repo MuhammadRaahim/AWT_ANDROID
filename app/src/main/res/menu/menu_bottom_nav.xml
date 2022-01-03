@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item
+        android:id="@+id/navigation_home"
+        android:title="@string/str_home"
+        android:enabled="true"
+        app:showAsAction="ifRoom"
+        android:icon="@drawable/img_home_white"/>
+
+    <item
+        android:id="@+id/navigation_category"
+        android:title="@string/str_category"
+        android:enabled="true"
+        app:showAsAction="ifRoom"
+        android:icon="@drawable/ic_cart_white"
+        />
+
+    <item
+        android:id="@+id/navigation_sell"
+        android:title="@string/str_sell"
+        android:enabled="true"
+        app:showAsAction="ifRoom"
+        android:icon="@drawable/img_selling"/>
+
+    <item
+        android:id="@+id/navigation_account"
+        android:title="@string/str_account"
+        android:enabled="true"
+        app:showAsAction="ifRoom"
+        android:icon="@drawable/img_person_white"/>
+
+    <item
+        android:id="@+id/navigation_whishlist"
+        android:title="whishlist"
+        android:enabled="true"
+        app:showAsAction="ifRoom"
+        android:icon="@drawable/ic_my_wishlist_white"/>
+
+</menu>
