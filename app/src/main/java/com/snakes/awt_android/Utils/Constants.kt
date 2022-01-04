@@ -7,6 +7,6 @@ class Constants {
         const val BASE_URL: String = ""
         const val PREF_NAME = "AWT"
         const val TOKEN = "token"
-        const val SPLASH_DISPLAY_LENGTH = 3000
+        const val SPLASH_DISPLAY_LENGTH = 4500
     }
 }

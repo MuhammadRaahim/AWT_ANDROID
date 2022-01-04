@@ -3,27 +3,41 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav_graph"
-    app:startDestination="@id/loginFragment">
+    app:startDestination="@id/welcome_Fragment">
+
     <fragment
-        android:id="@+id/loginFragment"
-        android:name="com.jdars.shared_online_business.Fragments.LoginFragment"
-        android:label="@string/str_login"
-        tools:layout="@layout/fragment_login">
+        android:id="@+id/welcome_Fragment"
+        android:name="com.snakes.awt_android.Fragments.WelcomeFragment"
+        android:label="@string/str_welcome_to_awt"
+        tools:layout="@layout/fragment_welcome">
         <action
-            android:id="@+id/action_loginFragment_to_register_Fragment"
-            app:destination="@id/register_Fragment" />
+            android:id="@+id/action_welcome_Fragment_to_signup_Fragment"
+            app:destination="@id/signup_Fragment" />
         <action
-            android:id="@+id/action_loginFragment_to_reset_pass_Fragment"
-            app:destination="@id/reset_pass_Fragment" />
+            android:id="@+id/action_welcome_Fragment_to_signIn_Fragment"
+            app:destination="@id/signIn_Fragment" />
     </fragment>
     <fragment
-        android:id="@+id/register_Fragment"
-        android:name="com.jdars.shared_online_business.Fragments.RegisterFragment"
-        android:label="@string/str_signup"
-        tools:layout="@layout/fragment_register"/>
+        android:id="@+id/signIn_Fragment"
+        android:name="com.snakes.awt_android.Fragments.SigninFragment"
+        android:label="@string/str_signIn"
+        tools:layout="@layout/fragment_signin">
+        <action
+            android:id="@+id/action_signIn_Fragment_to_reset_password_Fragment"
+            app:destination="@id/reset_password_Fragment" />
+    </fragment>
     <fragment
-        android:id="@+id/reset_pass_Fragment"
-        android:name="com.jdars.shared_online_business.Fragments.ResetPasswordFragment"
+        android:id="@+id/signup_Fragment"
+        android:name="com.snakes.awt_android.Fragments.SignupFragment"
+        android:label="@string/str_signup"
+        tools:layout="@layout/fragment_signup">
+        <action
+            android:id="@+id/action_signup_Fragment_to_welcome_Fragment"
+            app:destination="@id/welcome_Fragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/reset_password_Fragment"
+        android:name="com.snakes.awt_android.Fragments.RsetPasswordFragment"
         android:label="@string/str_reset_password"
         tools:layout="@layout/fragment_reset_password"/>
 </navigation>
