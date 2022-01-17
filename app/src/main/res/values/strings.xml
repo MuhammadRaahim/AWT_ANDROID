@@ -3,7 +3,7 @@
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="str_welcome_to_awt">WELCOME TO AWT</string>
-    <string name="str_signIn">SignIn</string>
+    <string name="str_signIn">Sign In</string>
     <string name="str_signup">SignUp</string>
     <string name="str_reset_password">Reset Password</string>
     <string name="str_khana_sab_ka_liye">Khana Sab K Liye</string>
@@ -26,5 +26,11 @@
     <string name="str_already_have_an_account">Already have an account?</string>
     <string name="str_back_to_login">Back to login</string>
     <string name="str_reset_your_password">Reset Your Password</string>
+    <string name="str_home">Home</string>
+    <string name="str_about_us">About Us</string>
+    <string name="str_our_project">Our Project</string>
+    <string name="str_profile">Profile</string>
+    <string name="str_orphan_house">Orphan House</string>
+    <string name="str_rate_us">Rate Us</string>
 
 </resources>
