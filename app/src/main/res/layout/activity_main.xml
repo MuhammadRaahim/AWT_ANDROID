@@ -21,7 +21,8 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"/>
+            app:layout_constraintTop_toTopOf="parent"
+            app:navGraph="@navigation/home_nav_graph"/>
     </androidx.constraintlayout.widget.ConstraintLayout>
     <com.google.android.material.navigation.NavigationView
         android:id="@+id/navView"
@@ -253,7 +254,6 @@
                             android:clickable="true"
                             android:focusable="true"/>
                     </LinearLayout>
-
                 </LinearLayout>
             </androidx.core.widget.NestedScrollView>
         </RelativeLayout>

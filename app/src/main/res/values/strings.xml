@@ -32,5 +32,7 @@
     <string name="str_profile">Profile</string>
     <string name="str_orphan_house">Orphan House</string>
     <string name="str_rate_us">Rate Us</string>
+    <string name="str_what_are_you_looking_for">What are you looking for?</string>
+
 
 </resources>
