@@ -8,23 +8,54 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.core.content.ContextCompat
 import androidx.core.content.res.ResourcesCompat
+import androidx.navigation.fragment.findNavController
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 import com.denzcoskun.imageslider.constants.ScaleTypes
 import com.denzcoskun.imageslider.models.SlideModel
+import com.snakes.awt_android.Adapters.DasterKhawanAdapter
+import com.snakes.awt_android.Adapters.ServicesAdapter
 import com.snakes.awt_android.R
+import com.snakes.awt_android.databinding.DasterkhawanItemBinding
 import com.snakes.awt_android.databinding.FragmentHomeBinding
 
 
 class HomeFragment : Fragment() {
 
     private lateinit var binding: FragmentHomeBinding
+    private lateinit var adapterDasterkhawan: DasterKhawanAdapter
+    private lateinit var servicesAdapter: ServicesAdapter
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
         binding = FragmentHomeBinding.inflate(layoutInflater)
+        setClickListener()
         setImageSlider()
+        setDasterKhawanRecyclerView()
+        setServicesRecyclerView()
         return binding.root
+    }
+
+    private fun setClickListener() {
+        binding.apply {
+            toolbar.ivGraph.setOnClickListener {
+                findNavController().navigate(R.id.navigation_graph)
+            }
+        }
+    }
+
+    private fun setServicesRecyclerView() {
+        binding.rvService.layoutManager =  LinearLayoutManager(requireActivity(),  RecyclerView.VERTICAL, false)
+        servicesAdapter = ServicesAdapter()
+        binding.rvService.adapter = servicesAdapter
+    }
+
+    private fun setDasterKhawanRecyclerView() {
+        binding.rvDasterkawan.layoutManager =  LinearLayoutManager(requireActivity(),  RecyclerView.HORIZONTAL, false)
+        adapterDasterkhawan = DasterKhawanAdapter()
+        binding.rvDasterkawan.adapter = adapterDasterkhawan
     }
 
     private fun setImageSlider() {
