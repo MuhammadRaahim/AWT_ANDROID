@@ -13,6 +13,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.denzcoskun.imageslider.constants.ScaleTypes
 import com.denzcoskun.imageslider.models.SlideModel
+import com.jdars.shared_online_business.CallBacks.DrawerHandler
 import com.snakes.awt_android.Adapters.DasterKhawanAdapter
 import com.snakes.awt_android.Adapters.ServicesAdapter
 import com.snakes.awt_android.R
@@ -25,6 +26,7 @@ class HomeFragment : Fragment() {
     private lateinit var binding: FragmentHomeBinding
     private lateinit var adapterDasterkhawan: DasterKhawanAdapter
     private lateinit var servicesAdapter: ServicesAdapter
+    private lateinit var drawerHandlerCallback: DrawerHandler
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -38,11 +40,24 @@ class HomeFragment : Fragment() {
         return binding.root
     }
 
+
+    override fun onAttach(context: Context) {
+        super.onAttach(context)
+        drawerHandlerCallback = context as DrawerHandler
+    }
+
     private fun setClickListener() {
         binding.apply {
             toolbar.ivGraph.setOnClickListener {
                 findNavController().navigate(R.id.navigation_graph)
             }
+            toolbar.ivDonate.setOnClickListener {
+                findNavController().navigate(R.id.navigation_maps)
+            }
+            toolbar.ivToolbar.setOnClickListener {
+                drawerHandlerCallback.openDrawer()
+            }
+
         }
     }
 

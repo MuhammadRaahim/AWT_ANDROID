@@ -1,6 +1,7 @@
 <resources>
     <string name="app_name">AWT_android</string>
     <!-- TODO: Remove or change this placeholder text -->
+    <string name="API_KEY">AIzaSyCsKHL9aYMkdDPUSLtcOoASZOwZ_TtMhz8</string>
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="str_welcome_to_awt">WELCOME TO AWT</string>
     <string name="str_signIn">Sign In</string>
@@ -37,6 +38,11 @@
     <string name="str_dasterkhawan_image">Dasterkhawan image</string>
     <string name="str_projects">Our Projects / Services</string>
     <string name="str_graph">Donation Graph</string>
+    <string name="str_cnic_number">CNIC Number</string>
+    <string name="str_save_profile">Save Profile</string>
+    <string name="str_Maps">Maps</string>
+    <string name="permission_required">Permission required for app to work properly</string>
+    <string name="str_ok">OK</string>
 
 
 </resources>

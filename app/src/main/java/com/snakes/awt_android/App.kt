@@ -11,7 +11,7 @@ class App: Application() {
         context =applicationContext
     }
     companion object{
-
+        @SuppressLint("StaticFieldLeak")
         private var context: Context? = null
         fun getAppContext(): Context? {
             return context
