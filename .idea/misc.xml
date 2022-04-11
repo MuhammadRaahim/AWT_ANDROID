@@ -19,6 +19,7 @@
         <entry key="..\:/Users/Dell/Documents/GitHub/AWT_ANDROID/app/src/main/res/drawable-v24/ic_message_edit.xml" value="0.19375" />
         <entry key="..\:/Users/Dell/Documents/GitHub/AWT_ANDROID/app/src/main/res/drawable-v24/ic_telephone.xml" value="0.19375" />
         <entry key="..\:/Users/Dell/Documents/GitHub/AWT_ANDROID/app/src/main/res/drawable-v24/ic_username_drawable.xml" value="0.19375" />
+        <entry key="..\:/Users/Dell/Documents/GitHub/AWT_ANDROID/app/src/main/res/drawable/bg_bottom_sheet.xml" value="0.19375" />
         <entry key="..\:/Users/Dell/Documents/GitHub/AWT_ANDROID/app/src/main/res/drawable/bg_rectangle_light.xml" value="0.19375" />
         <entry key="..\:/Users/Dell/Documents/GitHub/AWT_ANDROID/app/src/main/res/drawable/bg_squre.xml" value="0.19375" />
         <entry key="..\:/Users/Dell/Documents/GitHub/AWT_ANDROID/app/src/main/res/drawable/gradiant_baground.xml" value="0.19375" />
@@ -35,6 +36,7 @@
         <entry key="..\:/Users/Dell/Documents/GitHub/AWT_ANDROID/app/src/main/res/layout/activity_splash.xml" value="0.1734375" />
         <entry key="..\:/Users/Dell/Documents/GitHub/AWT_ANDROID/app/src/main/res/layout/activity_web.xml" value="0.13645833333333332" />
         <entry key="..\:/Users/Dell/Documents/GitHub/AWT_ANDROID/app/src/main/res/layout/dasterkhawan_item.xml" value="0.1734375" />
+        <entry key="..\:/Users/Dell/Documents/GitHub/AWT_ANDROID/app/src/main/res/layout/fragment_daster_khawan_bottom.xml" value="0.1734375" />
         <entry key="..\:/Users/Dell/Documents/GitHub/AWT_ANDROID/app/src/main/res/layout/fragment_graph.xml" value="0.1734375" />
         <entry key="..\:/Users/Dell/Documents/GitHub/AWT_ANDROID/app/src/main/res/layout/fragment_home.xml" value="0.1734375" />
         <entry key="..\:/Users/Dell/Documents/GitHub/AWT_ANDROID/app/src/main/res/layout/fragment_maps.xml" value="0.15364583333333334" />

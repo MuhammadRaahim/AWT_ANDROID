@@ -43,6 +43,7 @@
     <string name="str_Maps">Maps</string>
     <string name="permission_required">Permission required for app to work properly</string>
     <string name="str_ok">OK</string>
+    <string name="str_direction">Direction</string>
 
 
 </resources>

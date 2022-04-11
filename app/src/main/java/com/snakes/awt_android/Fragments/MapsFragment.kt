@@ -39,6 +39,7 @@ class MapsFragment : Fragment(), OnMapReadyCallback {
     private lateinit var mMap: GoogleMap
     private lateinit var placesClient: PlacesClient
     private lateinit var fusedLocationProviderClient: FusedLocationProviderClient
+    private lateinit var dasterKhawanBottomFragment: DasterKhawanBottomFragment
     private var lastKnownLocation: Location? = null
     private var locationPermissionGranted = false
 
@@ -63,6 +64,9 @@ class MapsFragment : Fragment(), OnMapReadyCallback {
         fusedLocationProviderClient = LocationServices.getFusedLocationProviderClient(requireActivity())
 
         getLocationPermission()
+
+        dasterKhawanBottomFragment = DasterKhawanBottomFragment()
+        dasterKhawanBottomFragment.show(requireActivity().supportFragmentManager,"readTag")
     }
 
     private fun setMap() {

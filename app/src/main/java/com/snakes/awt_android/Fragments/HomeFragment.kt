@@ -16,12 +16,13 @@ import com.denzcoskun.imageslider.models.SlideModel
 import com.jdars.shared_online_business.CallBacks.DrawerHandler
 import com.snakes.awt_android.Adapters.DasterKhawanAdapter
 import com.snakes.awt_android.Adapters.ServicesAdapter
+import com.snakes.awt_android.CallBacks.OnItemClickListener
 import com.snakes.awt_android.R
 import com.snakes.awt_android.databinding.DasterkhawanItemBinding
 import com.snakes.awt_android.databinding.FragmentHomeBinding
 
 
-class HomeFragment : Fragment() {
+class HomeFragment : Fragment(), OnItemClickListener {
 
     private lateinit var binding: FragmentHomeBinding
     private lateinit var adapterDasterkhawan: DasterKhawanAdapter
@@ -51,9 +52,6 @@ class HomeFragment : Fragment() {
             toolbar.ivGraph.setOnClickListener {
                 findNavController().navigate(R.id.navigation_graph)
             }
-            toolbar.ivDonate.setOnClickListener {
-                findNavController().navigate(R.id.navigation_maps)
-            }
             toolbar.ivToolbar.setOnClickListener {
                 drawerHandlerCallback.openDrawer()
             }
@@ -69,7 +67,7 @@ class HomeFragment : Fragment() {
 
     private fun setDasterKhawanRecyclerView() {
         binding.rvDasterkawan.layoutManager =  LinearLayoutManager(requireActivity(),  RecyclerView.HORIZONTAL, false)
-        adapterDasterkhawan = DasterKhawanAdapter()
+        adapterDasterkhawan = DasterKhawanAdapter(this)
         binding.rvDasterkawan.adapter = adapterDasterkhawan
     }
 
@@ -79,6 +77,10 @@ class HomeFragment : Fragment() {
         imageList.add(SlideModel(R.drawable.img_slider_2, ScaleTypes.FIT))
         imageList.add(SlideModel(R.drawable.img_slider_3, ScaleTypes.FIT))
         binding.imageSlider.setImageList(imageList)
+    }
+
+    override fun onItemClick() {
+        findNavController().navigate(R.id.navigation_maps)
     }
 
 
