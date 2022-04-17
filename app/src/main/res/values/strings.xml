@@ -44,6 +44,11 @@
     <string name="permission_required">Permission required for app to work properly</string>
     <string name="str_ok">OK</string>
     <string name="str_direction">Direction</string>
+    <string name="str_phone_number">phone number</string>
+    <string name="str_admin_login">Admin Login</string>
+    <string name="str_admin_profile">Admin Profile</string>
+    <string name="str_admin_signup">Admin signup</string>
+    <string name="str_admin_dashboard">Admin dashboard</string>
 
 
 </resources>

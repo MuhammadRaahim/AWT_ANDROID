@@ -7,6 +7,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.navigation.fragment.findNavController
+import com.snakes.awt_android.Activities.AdminActivity
 import com.snakes.awt_android.Activities.WebActivity
 import com.snakes.awt_android.R
 import com.snakes.awt_android.databinding.FragmentWelcomeBinding
@@ -15,6 +16,7 @@ import com.snakes.awt_android.databinding.FragmentWelcomeBinding
 class WelcomeFragment : Fragment() {
 
     private lateinit var binding: FragmentWelcomeBinding
+    private var count = 0
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -38,6 +40,13 @@ class WelcomeFragment : Fragment() {
             }
             btnGoToWebsite.setOnClickListener {
                 startActivity(Intent(requireActivity(),WebActivity::class.java))
+            }
+            ivLogo.setOnClickListener {
+                count += 1
+                if (count == 6){
+                    count = 0
+                    startActivity(Intent(requireContext(),AdminActivity::class.java))
+                }
             }
         }
     }

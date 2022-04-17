@@ -15,6 +15,7 @@ import com.denzcoskun.imageslider.constants.ScaleTypes
 import com.denzcoskun.imageslider.models.SlideModel
 import com.jdars.shared_online_business.CallBacks.DrawerHandler
 import com.snakes.awt_android.Adapters.DasterKhawanAdapter
+import com.snakes.awt_android.Adapters.SchoolKhanaAdapter
 import com.snakes.awt_android.Adapters.ServicesAdapter
 import com.snakes.awt_android.CallBacks.OnItemClickListener
 import com.snakes.awt_android.R
@@ -27,6 +28,7 @@ class HomeFragment : Fragment(), OnItemClickListener {
     private lateinit var binding: FragmentHomeBinding
     private lateinit var adapterDasterkhawan: DasterKhawanAdapter
     private lateinit var servicesAdapter: ServicesAdapter
+    private lateinit var schoolKhanaAdapter: SchoolKhanaAdapter
     private lateinit var drawerHandlerCallback: DrawerHandler
 
     override fun onCreateView(
@@ -37,6 +39,7 @@ class HomeFragment : Fragment(), OnItemClickListener {
         setClickListener()
         setImageSlider()
         setDasterKhawanRecyclerView()
+        setSchoolKhawanRecyclerView()
         setServicesRecyclerView()
         return binding.root
     }
@@ -69,6 +72,12 @@ class HomeFragment : Fragment(), OnItemClickListener {
         binding.rvDasterkawan.layoutManager =  LinearLayoutManager(requireActivity(),  RecyclerView.HORIZONTAL, false)
         adapterDasterkhawan = DasterKhawanAdapter(this)
         binding.rvDasterkawan.adapter = adapterDasterkhawan
+    }
+
+    private fun setSchoolKhawanRecyclerView() {
+        binding.rvSchoolKhana.layoutManager =  LinearLayoutManager(requireActivity(),  RecyclerView.HORIZONTAL, false)
+        schoolKhanaAdapter = SchoolKhanaAdapter()
+        binding.rvSchoolKhana.adapter = schoolKhanaAdapter
     }
 
     private fun setImageSlider() {

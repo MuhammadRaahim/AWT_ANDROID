@@ -81,6 +81,29 @@
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@id/tv_dasterkawan" />
                 <TextView
+                    android:id="@+id/tv_school_khana"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/_10sdp"
+                    android:text="School Khana Program"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/_12ssp"
+                    android:textStyle="bold"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/rv_dasterkawan"/>
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rv_school_khana"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_5sdp"
+                    android:layout_marginTop="@dimen/_5sdp"
+                    android:layoutAnimation="@anim/layout_animation_slide_right"
+                    android:visibility="visible"
+                    app:layout_constrainedHeight="true"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/tv_school_khana" />
+                <TextView
                     android:id="@+id/tv_service"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -90,7 +113,7 @@
                     android:textSize="@dimen/_12ssp"
                     android:textStyle="bold"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@id/rv_dasterkawan"/>
+                    app:layout_constraintTop_toBottomOf="@id/rv_school_khana"/>
                 <androidx.recyclerview.widget.RecyclerView
                     android:id="@+id/rv_service"
                     android:layout_width="match_parent"
