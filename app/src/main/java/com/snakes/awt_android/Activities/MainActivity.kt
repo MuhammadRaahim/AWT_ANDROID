@@ -23,10 +23,12 @@ import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
 import com.google.android.gms.maps.LocationSource
 import com.google.android.material.snackbar.Snackbar
+import com.google.firebase.auth.FirebaseAuth
 import com.horizam.skbhub.Utils.Constants.Companion.awtAboutUsUrl
 import com.horizam.skbhub.Utils.Constants.Companion.awtFacebookUrl
 import com.horizam.skbhub.Utils.Constants.Companion.awtLinkedinUrl
 import com.horizam.skbhub.Utils.Constants.Companion.emailAwt
+import com.snakes.awt_android.Activities.AuthActivity
 
 
 class MainActivity : AppCompatActivity(), DrawerHandler {
@@ -65,6 +67,11 @@ class MainActivity : AppCompatActivity(), DrawerHandler {
             }
             navProfile.setOnClickListener {
                 navController.navigate(R.id.navigation_profile)
+            }
+            navLogout.setOnClickListener {
+                FirebaseAuth.getInstance().signOut()
+                startActivity(Intent(this@MainActivity,AuthActivity::class.java))
+                finish()
             }
 
         }

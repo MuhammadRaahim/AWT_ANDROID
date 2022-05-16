@@ -57,6 +57,12 @@
     <string name="str_enter_valid_address">Enter a valid address</string>
     <string name="str_signup_successfully">Signup Successfully</string>
     <string name="str_invalid_refral_code">invalid referral code</string>
+    <string name="str_logout">logout</string>
+    <string name="str_otp_verification">OTP Verification</string>
+    <string name="str_enter_the_4_digit_code_sent_to_you_at_0323_4004748">Enter the 6–digit code sent to you at</string>
+    <string name="str_verify">VERIFY</string>
+    <string name="str_resend">Resend</string>
+    <string name="str_sdmin_otp_fragment">Admin OTP Fragment</string>
 
 
 </resources>

@@ -4,9 +4,11 @@ class Constants {
     companion object{
 
         const val USERS_DATABASE_ROOT = "Users"
+        const val Admin_DATABASE_ROOT = "Admin"
         const val PREF_NAME = "AWT"
         const val TOKEN = "token"
         const val SPLASH_DISPLAY_LENGTH = 4500
+        const val PHONE_NUMBER = "phone number"
         const val emailAwt = "info@allahwalaytrust.org.pk"
         const val urlWebView: String = "webViewUrl"
         const val awtHomeUrl: String = "https://allahwalaytrust.org.pk/"

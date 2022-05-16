@@ -10,6 +10,11 @@
         android:label="@string/str_admin_login"
         tools:layout="@layout/fragment_admin_login" />
     <fragment
+        android:id="@+id/navigation_admin_otp"
+        android:name="com.snakes.awt_android.Fragments.AdminOtpFragment"
+        android:label="@string/str_sdmin_otp_fragment"
+        tools:layout="@layout/fragment_admin_otp" />
+    <fragment
         android:id="@+id/navigation_admin_signup"
         android:name="com.snakes.awt_android.Fragments.AdminSignupFragment"
         android:label="@string/str_admin_signup"
@@ -19,5 +24,4 @@
         android:name="com.snakes.awt_android.Fragments.AdminDashBoardFragment"
         android:label="@string/str_admin_dashboard"
         tools:layout="@layout/fragment_admin_dash_board" />
-
 </navigation>
