@@ -23,7 +23,6 @@ import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
 import com.google.android.gms.maps.LocationSource
 import com.google.android.material.snackbar.Snackbar
-import com.horizam.skbhub.Utils.Constants.Companion.PERMISSIONS_REQUEST_ACCESS_FINE_LOCATION
 import com.horizam.skbhub.Utils.Constants.Companion.awtAboutUsUrl
 import com.horizam.skbhub.Utils.Constants.Companion.awtFacebookUrl
 import com.horizam.skbhub.Utils.Constants.Companion.awtLinkedinUrl

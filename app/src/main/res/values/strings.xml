@@ -49,6 +49,14 @@
     <string name="str_admin_profile">Admin Profile</string>
     <string name="str_admin_signup">Admin signup</string>
     <string name="str_admin_dashboard">Admin dashboard</string>
+    <string name="str_enter_valid_name">Enter a valid name</string>
+    <string name="str_enter_valid_email_address">Enter a valid email address</string>
+    <string name="str_enter_valid_phone">Enter a valid phone number</string>
+    <string name="str_enter_valid_username">Please enter a valid username</string>
+    <string name="str_enter_valid_password_policy">Password should be minimum 6 characters long</string>
+    <string name="str_enter_valid_address">Enter a valid address</string>
+    <string name="str_signup_successfully">Signup Successfully</string>
+    <string name="str_invalid_refral_code">invalid referral code</string>
 
 
 </resources>
