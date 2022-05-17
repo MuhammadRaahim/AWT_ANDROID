@@ -7,5 +7,6 @@ dependencyResolutionManagement {
         maven { url 'https://www.jitpack.io' }
     }
 }
+
 rootProject.name = "AWT_android"
 include ':app'

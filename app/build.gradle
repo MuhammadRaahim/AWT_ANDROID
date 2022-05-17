@@ -80,5 +80,7 @@ dependencies {
     implementation 'com.github.AnyChart:AnyChart-Android:1.1.2'
     //google maps
     implementation 'com.google.android.gms:play-services-maps:18.0.2'
+    // saftynet
+    implementation 'com.google.android.gms:play-services-safetynet:18.0.1'
 
 }
