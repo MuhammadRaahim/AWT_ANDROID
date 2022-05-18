@@ -19,6 +19,7 @@ import com.google.firebase.ktx.Firebase
 import com.horizam.skbhub.Utils.Constants
 import com.horizam.skbhub.Utils.Constants.Companion.Admin_DATABASE_ROOT
 import com.horizam.skbhub.Utils.Constants.Companion.PHONE_NUMBER
+import com.horizam.skbhub.Utils.PrefManager
 import com.snakes.awt_android.CallBacks.GenericHandler
 import com.snakes.awt_android.R
 import com.snakes.awt_android.databinding.FragmentAdminOtpBinding
@@ -33,6 +34,7 @@ class AdminOtpFragment : Fragment() {
     private lateinit var genericHandler: GenericHandler
     private lateinit var adminReference: CollectionReference
     private lateinit var db: FirebaseFirestore
+    private lateinit var manager: PrefManager
     private var currentFirebaseUser: FirebaseUser? = null
     private var  codeVerification: String? = null
 
@@ -58,6 +60,7 @@ class AdminOtpFragment : Fragment() {
         phone = arguments?.getString(PHONE_NUMBER).toString()
         binding.tvFourDigit.text = getString(R.string.str_enter_the_4_digit_code_sent_to_you_at_0323_4004748).plus("\n").plus(phone)
         db = Firebase.firestore
+        manager = PrefManager(requireContext())
         adminReference = db.collection(Admin_DATABASE_ROOT)
         auth = FirebaseAuth.getInstance()
     }
@@ -112,6 +115,7 @@ class AdminOtpFragment : Fragment() {
         auth.signInWithCredential(credential)
             .addOnCompleteListener(requireActivity()) { task ->
                 if (task.isSuccessful) {
+                    manager.session = Constants.ADMIN
                     checkForUser()
                 } else {
                     if (task.exception is FirebaseAuthInvalidCredentialsException) {

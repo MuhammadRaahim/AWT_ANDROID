@@ -63,6 +63,10 @@
     <string name="str_verify">VERIFY</string>
     <string name="str_resend">Resend</string>
     <string name="str_sdmin_otp_fragment">Admin OTP Fragment</string>
+    <string name="str_please_wait">Please Wait</string>
+    <string name="str_file_uploading">File uploading</string>
+    <string name="str_invalid_cnic">Invalid CNIC</string>
+    <string name="str_adminprofile_fragment">Admin Profile Fragment</string>
 
 
 </resources>

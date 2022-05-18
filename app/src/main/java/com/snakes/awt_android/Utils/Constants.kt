@@ -6,7 +6,10 @@ class Constants {
         const val USERS_DATABASE_ROOT = "Users"
         const val Admin_DATABASE_ROOT = "Admin"
         const val PREF_NAME = "AWT"
-        const val TOKEN = "token"
+        const val SESSION = "session"
+        const val USER = "user"
+        const val ADMIN = "admin"
+        const val LOGOUT = "logout"
         const val SPLASH_DISPLAY_LENGTH = 4500
         const val PHONE_NUMBER = "phone number"
         const val emailAwt = "info@allahwalaytrust.org.pk"

@@ -5,8 +5,10 @@ import android.graphics.Color
 import android.icu.number.IntegerWidth
 import android.view.LayoutInflater
 import android.view.ViewGroup
+import androidx.navigation.Navigation
 import androidx.recyclerview.widget.RecyclerView
 import com.snakes.awt_android.Fragments.Platforms
+import com.snakes.awt_android.R
 import com.snakes.awt_android.databinding.ItemPlatformBinding
 
 
@@ -43,6 +45,17 @@ class AdminPlatformsAdapter(
                 ivImage.setImageResource(platforms.icon)
                 card.setBackgroundColor(Color.parseColor(platforms.backgroundColor))
                 tvPlatformName.text = platforms.title
+
+
+                itemView.setOnClickListener {
+                    when(position){
+                        0 ->{
+                            Navigation.findNavController(itemView).navigate(R.id.navigation_admin_profile)
+                        }
+                    }
+                }
+
+
 
             }
 

@@ -9,10 +9,10 @@ class PrefManager( var context: Context) {
     private val editor: SharedPreferences.Editor = pref.edit()
 
 
-    var accessToken:String
-        get() = pref.getString(Constants.TOKEN, "")!!
+    var session:String
+        get() = pref.getString(Constants.SESSION, "")!!
         set(value) {
-            editor.putString(Constants.TOKEN,value)
+            editor.putString(Constants.SESSION,value)
             editor.apply()
             editor.commit()
         }

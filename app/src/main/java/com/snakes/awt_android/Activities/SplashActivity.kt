@@ -9,6 +9,8 @@ import com.bumptech.glide.Glide
 import com.google.firebase.auth.ktx.auth
 import com.google.firebase.ktx.Firebase
 import com.horizam.skbhub.Utils.Constants
+import com.horizam.skbhub.Utils.PrefManager
+import com.snakes.awt_android.App
 import com.snakes.awt_android.MainActivity
 import com.snakes.awt_android.R
 import com.snakes.awt_android.databinding.ActivitySplashBinding
@@ -16,6 +18,7 @@ import com.snakes.awt_android.databinding.ActivitySplashBinding
 class SplashActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivitySplashBinding
+    private lateinit var manger: PrefManager
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -40,11 +43,18 @@ class SplashActivity : AppCompatActivity() {
     }
 
     private fun checkLoginInfo(){
-        val user = Firebase.auth.currentUser
-        val intent = if (user != null){
-            Intent(this@SplashActivity, MainActivity::class.java)
-        }else{
-            Intent(this@SplashActivity, AuthActivity::class.java)
+        manger = PrefManager(App.getAppContext()!!)
+        var intent: Intent? = null
+        when (manger.session) {
+            Constants.ADMIN -> {
+                intent = Intent(this,AdminActivity::class.java)
+            }
+            Constants.USER -> {
+                intent = Intent(this,MainActivity::class.java)
+            }
+            else -> {
+                intent = Intent(this,AuthActivity::class.java)
+            }
         }
         startActivity(intent)
         finish()

@@ -5,7 +5,6 @@ import android.app.Dialog
 import android.content.Context
 import android.content.pm.PackageManager
 import android.net.Uri
-import android.os.Binder
 import android.os.Bundle
 import android.util.Log
 import androidx.fragment.app.Fragment
@@ -23,6 +22,7 @@ import com.google.android.material.snackbar.Snackbar
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.FirebaseUser
 import com.google.firebase.firestore.CollectionReference
+import com.google.firebase.firestore.DocumentSnapshot
 import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.firestore.ktx.firestore
 import com.google.firebase.ktx.Firebase
@@ -36,14 +36,12 @@ import com.snakes.awt_android.Utils.BaseUtils.Companion.hideKeyboard
 import com.snakes.awt_android.Utils.ImageFilePath
 import com.snakes.awt_android.Utils.Validator
 import com.snakes.awt_android.databinding.DialogFileUploadingBinding
-import com.snakes.awt_android.databinding.FragmentAdminSignupBinding
+import com.snakes.awt_android.databinding.FragmentAdminProfileBinding
 import java.io.File
-import java.util.*
 
+class AdminProfileFragment : Fragment() {
 
-class AdminSignupFragment : Fragment() {
-
-    private lateinit var binding: FragmentAdminSignupBinding
+    private lateinit var binding: FragmentAdminProfileBinding
     private lateinit var currentFirebaseUser: FirebaseUser
     private lateinit var adminReference: CollectionReference
     private lateinit var genericHandler: GenericHandler
@@ -55,17 +53,54 @@ class AdminSignupFragment : Fragment() {
     private var imagePath: String? = null
     private var image: String = ""
 
-
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        binding = FragmentAdminSignupBinding.inflate(layoutInflater)
+        binding = FragmentAdminProfileBinding.inflate(layoutInflater)
         initView()
         setClickListeners()
-
+        getUserFirebaseData()
         return binding.root
     }
+
+    private fun getUserFirebaseData(){
+        genericHandler.showProgressBar(true)
+        currentFirebaseUser = auth.currentUser!!
+        adminReference.document(currentFirebaseUser!!.uid)
+            .get().addOnCompleteListener {
+                if (it.isSuccessful){
+                    val document: DocumentSnapshot = it.result
+                    if (document.exists()) {
+                        val user = document.toObject(Admin::class.java)
+                        setData(user)
+                    }
+                }else{
+                    genericHandler.showProgressBar(false)
+                    genericHandler.showMessage(it.exception.toString())
+                }
+
+            }
+    }
+
+    private fun setData(user: Admin?) {
+        if (user!!.profileImage != null){
+            image = user!!.profileImage!!
+            Glide.with(requireContext()).load(user.profileImage).placeholder(R.drawable.img_profile_cover_placeholder)
+                .into(binding.civProfilePic)
+        }
+        binding.apply {
+            etUsername.setText(user!!.userName)
+            etEmail.setText(user.email)
+            etPhone.setText(user.phone)
+            etCnic.setText(user.cnic)
+            etReferralCode.setText(user.referralCode)
+            etPaypalAddress.setText(user.address)
+
+        }
+        genericHandler.showProgressBar(false)
+    }
+
 
     override fun onAttach(context: Context) {
         super.onAttach(context)
@@ -97,6 +132,9 @@ class AdminSignupFragment : Fragment() {
 
     private fun setClickListeners() {
         binding.apply {
+            icBack.setOnClickListener {
+                findNavController().popBackStack()
+            }
             ivChangeProfile.setOnClickListener {
                 launchGalleryIntent()
             }
@@ -198,8 +236,6 @@ class AdminSignupFragment : Fragment() {
         ref.set(user).addOnSuccessListener {
             genericHandler.showProgressBar(false)
             genericHandler.showMessage("Save successfully")
-            findNavController().navigate(R.id.navigation_admin_dashboard)
-            findNavController().clearBackStack(R.id.navigation_admin_dashboard)
         }.addOnFailureListener{
             genericHandler.showProgressBar(false)
             genericHandler.showMessage(it.message.toString())

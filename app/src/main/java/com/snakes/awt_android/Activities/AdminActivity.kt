@@ -1,5 +1,6 @@
 package com.snakes.awt_android.Activities
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.core.view.isVisible
@@ -7,6 +8,8 @@ import androidx.navigation.NavController
 import androidx.navigation.fragment.NavHostFragment
 import com.bumptech.glide.load.resource.gif.GifDrawableEncoder
 import com.google.android.material.snackbar.Snackbar
+import com.google.firebase.auth.ktx.auth
+import com.google.firebase.ktx.Firebase
 import com.snakes.awt_android.CallBacks.GenericHandler
 import com.snakes.awt_android.R
 import com.snakes.awt_android.databinding.ActivityAdminBinding
@@ -28,6 +31,14 @@ class AdminActivity : AppCompatActivity(),GenericHandler {
         val navHostFragment =
             supportFragmentManager.findFragmentById(R.id.admin_nav_host_fragment) as NavHostFragment
         navController = navHostFragment.navController
+        checkLoginInfo()
+
+    }
+    private fun checkLoginInfo(){
+        val user = Firebase.auth.currentUser
+         if (user != null){
+            navController.navigate(R.id.navigation_admin_dashboard)
+        }
     }
 
     override fun showProgressBar(show: Boolean) {

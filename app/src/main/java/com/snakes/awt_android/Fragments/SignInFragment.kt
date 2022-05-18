@@ -11,6 +11,8 @@ import androidx.navigation.fragment.findNavController
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.ktx.auth
 import com.google.firebase.ktx.Firebase
+import com.horizam.skbhub.Utils.Constants
+import com.horizam.skbhub.Utils.PrefManager
 import com.snakes.awt_android.CallBacks.GenericHandler
 import com.snakes.awt_android.MainActivity
 import com.snakes.awt_android.R
@@ -23,6 +25,7 @@ class SigninFragment : Fragment() {
     private lateinit var binding: FragmentSigninBinding
     private lateinit var genericHandler: GenericHandler
     private lateinit var auth: FirebaseAuth
+    private lateinit var manger: PrefManager
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -41,6 +44,7 @@ class SigninFragment : Fragment() {
 
     private fun initViews() {
         auth = Firebase.auth
+        manger = PrefManager(requireContext())
     }
 
     private fun setClickListener() {
@@ -71,6 +75,7 @@ class SigninFragment : Fragment() {
             .addOnCompleteListener(requireActivity()) { task ->
                 if (task.isSuccessful) {
                     genericHandler.showProgressBar(false)
+                    manger.session = Constants.USER
                     var intent = Intent(requireActivity(), MainActivity::class.java)
                     intent.flags =
                         Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK

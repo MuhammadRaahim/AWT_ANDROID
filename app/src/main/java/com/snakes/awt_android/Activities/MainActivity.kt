@@ -24,10 +24,12 @@ import androidx.core.content.ContextCompat
 import com.google.android.gms.maps.LocationSource
 import com.google.android.material.snackbar.Snackbar
 import com.google.firebase.auth.FirebaseAuth
+import com.horizam.skbhub.Utils.Constants
 import com.horizam.skbhub.Utils.Constants.Companion.awtAboutUsUrl
 import com.horizam.skbhub.Utils.Constants.Companion.awtFacebookUrl
 import com.horizam.skbhub.Utils.Constants.Companion.awtLinkedinUrl
 import com.horizam.skbhub.Utils.Constants.Companion.emailAwt
+import com.horizam.skbhub.Utils.PrefManager
 import com.snakes.awt_android.Activities.AuthActivity
 
 
@@ -35,6 +37,7 @@ class MainActivity : AppCompatActivity(), DrawerHandler {
 
     private lateinit var navController: NavController
     private lateinit var binding: ActivityMainBinding
+    private lateinit var manager: PrefManager
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -70,6 +73,7 @@ class MainActivity : AppCompatActivity(), DrawerHandler {
             }
             navLogout.setOnClickListener {
                 FirebaseAuth.getInstance().signOut()
+                manager.session = Constants.LOGOUT
                 startActivity(Intent(this@MainActivity,AuthActivity::class.java))
                 finish()
             }
@@ -78,6 +82,7 @@ class MainActivity : AppCompatActivity(), DrawerHandler {
     }
 
     private fun setUpUI() {
+        manager = PrefManager(this)
         val navHostFragment =
             supportFragmentManager.findFragmentById(R.id.nav_host_fragment_home) as NavHostFragment
         navController = navHostFragment.navController
