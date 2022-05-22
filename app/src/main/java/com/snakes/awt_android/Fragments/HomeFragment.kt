@@ -18,6 +18,7 @@ import com.snakes.awt_android.Adapters.DasterKhawanAdapter
 import com.snakes.awt_android.Adapters.SchoolKhanaAdapter
 import com.snakes.awt_android.Adapters.ServicesAdapter
 import com.snakes.awt_android.CallBacks.OnItemClickListener
+import com.snakes.awt_android.Models.Service
 import com.snakes.awt_android.R
 import com.snakes.awt_android.databinding.DasterkhawanItemBinding
 import com.snakes.awt_android.databinding.FragmentHomeBinding
@@ -31,17 +32,24 @@ class HomeFragment : Fragment(), OnItemClickListener {
     private lateinit var schoolKhanaAdapter: SchoolKhanaAdapter
     private lateinit var drawerHandlerCallback: DrawerHandler
 
+    private lateinit var servicesList: ArrayList<Service>
+
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
         binding = FragmentHomeBinding.inflate(layoutInflater)
+        initViews()
         setClickListener()
         setImageSlider()
         setDasterKhawanRecyclerView()
         setSchoolKhawanRecyclerView()
         setServicesRecyclerView()
         return binding.root
+    }
+
+    private fun initViews() {
+        servicesList = ArrayList()
     }
 
 
@@ -64,7 +72,7 @@ class HomeFragment : Fragment(), OnItemClickListener {
 
     private fun setServicesRecyclerView() {
         binding.rvService.layoutManager =  LinearLayoutManager(requireActivity(),  RecyclerView.VERTICAL, false)
-        servicesAdapter = ServicesAdapter()
+        servicesAdapter = ServicesAdapter(servicesList)
         binding.rvService.adapter = servicesAdapter
     }
 

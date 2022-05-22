@@ -67,6 +67,24 @@
     <string name="str_file_uploading">File uploading</string>
     <string name="str_invalid_cnic">Invalid CNIC</string>
     <string name="str_adminprofile_fragment">Admin Profile Fragment</string>
+    <string name="str_services">Services</string>
+    <string name="str_invalid_field">Invalid field</string>
+    <string name="str_learn_how_to_buy_nft_in_india_all_about_nft_marketplaces">Learn how to buy NFT in India. All about NFT marketplaces</string>
+    <string name="str_add_service">Add Service</string>
+    <string name="str_service_name">Service Name</string>
+    <string name="str_description">Description</string>
+    <string name="str_details">Details</string>
+    <string name="str_create_service">Create Service</string>
+    <string name="str_no_data_found">No Data Found</string>
+    <string name="str_donate_now">Donate Now</string>
+    <string name="str_total_donation">Total Donation</string>
+    <string name="str_dasterkhawan_name">DasterKhawan Name</string>
+    <string name="str_dasterkhawan_date">DasterKhawan Date</string>
+    <string name="str_date">Date</string>
+    <string name="str_start_time">Start Time</string>
+    <string name="str_end_time">End Time</string>
+    <string name="str_location">Location</string>
+    <string name="str_add_dasterkhawan">Add DasterKhawan</string>
 
 
 </resources>

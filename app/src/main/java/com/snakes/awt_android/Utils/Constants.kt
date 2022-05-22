@@ -5,12 +5,15 @@ class Constants {
 
         const val USERS_DATABASE_ROOT = "Users"
         const val Admin_DATABASE_ROOT = "Admin"
+        const val SERVICE_DATABASE_ROOT = "Service"
+        const val DASTERKHAWAN_DATABASE_ROOT = "DasterKhawan"
         const val PREF_NAME = "AWT"
         const val SESSION = "session"
         const val USER = "user"
         const val ADMIN = "admin"
         const val LOGOUT = "logout"
         const val SPLASH_DISPLAY_LENGTH = 4500
+        const val SERVICE_OBJECT = "service"
         const val PHONE_NUMBER = "phone number"
         const val emailAwt = "info@allahwalaytrust.org.pk"
         const val urlWebView: String = "webViewUrl"

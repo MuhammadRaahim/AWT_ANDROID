@@ -7,6 +7,7 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.navigation.Navigation
 import androidx.recyclerview.widget.RecyclerView
+import com.snakes.awt_android.Activities.AdminServiceActivity
 import com.snakes.awt_android.Fragments.Platforms
 import com.snakes.awt_android.R
 import com.snakes.awt_android.databinding.ItemPlatformBinding
@@ -51,6 +52,9 @@ class AdminPlatformsAdapter(
                     when(position){
                         0 ->{
                             Navigation.findNavController(itemView).navigate(R.id.navigation_admin_profile)
+                        }
+                        1 ->{
+                            context.startActivity(Intent(context, AdminServiceActivity::class.java))
                         }
                     }
                 }

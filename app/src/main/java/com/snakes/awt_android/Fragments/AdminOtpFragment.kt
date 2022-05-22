@@ -155,6 +155,7 @@ class AdminOtpFragment : Fragment() {
                     genericHandler.showProgressBar(false)
                     val document: DocumentSnapshot = it.result
                     if (document.exists()) {
+                        findNavController().clearBackStack(R.id.navigation_admin_dashboard)
                         findNavController().navigate(R.id.navigation_admin_dashboard)
                     } else {
                         val bundle = bundleOf(PHONE_NUMBER to phone)
