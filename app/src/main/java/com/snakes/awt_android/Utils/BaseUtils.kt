@@ -2,23 +2,32 @@ package com.snakes.awt_android.Utils
 
 
 import android.app.Activity
+import android.app.DatePickerDialog
+import android.app.TimePickerDialog
 import android.content.Context
 
 
 import android.content.Intent
 
 import android.net.Uri
+import android.os.Build
 import android.view.View
 import android.view.inputmethod.InputMethodManager
+import android.widget.EditText
+import androidx.annotation.RequiresApi
 import androidx.fragment.app.Fragment
 import com.google.android.material.snackbar.Snackbar
 
 import com.horizam.skbhub.Utils.Constants.Companion.urlWebView
 import com.snakes.awt_android.Activities.WebActivity
 import com.snakes.awt_android.App
+import com.snakes.awt_android.R
 import id.zelory.compressor.Compressor
 import kotlinx.coroutines.Dispatchers
 import java.io.File
+import java.text.ParseException
+import java.text.SimpleDateFormat
+import java.util.*
 
 
 class BaseUtils {
@@ -45,6 +54,49 @@ class BaseUtils {
             val intent = Intent(context, WebActivity::class.java)
             intent.putExtra(urlWebView, url)
             context.startActivity(intent)
+        }
+
+        @RequiresApi(Build.VERSION_CODES.N)
+        fun showDatePicker(text: EditText, context: Context) {
+            val datePickerDialog = DatePickerDialog(context, R.style.Dialog)
+            datePickerDialog.setOnDateSetListener { view, year, month, dayOfMonth ->
+                var monthS = ""
+                var dayS = ""
+                monthS = if (month > 8) {
+                    (month + 1).toString()
+                } else {
+                    "0" + (month + 1)
+                }
+                dayS = if (dayOfMonth > 9) {
+                    dayOfMonth.toString()
+                } else {
+                    "0$dayOfMonth"
+                }
+                text.setText("$year-$monthS-$dayS")
+            }
+            datePickerDialog.show()
+        }
+
+        fun showTimePicker(text: EditText, context: Context) {
+            val mCurrentTime = Calendar.getInstance()
+            val hour = mCurrentTime[Calendar.HOUR_OF_DAY]
+            val minute = mCurrentTime[Calendar.MINUTE]
+            val mTimePicker: TimePickerDialog = TimePickerDialog(context, R.style.Dialog,
+                { view, hourOfDay, minute ->
+                    val time = "$hourOfDay:$minute"
+                    val fmt = SimpleDateFormat("HH:mm")
+                    var date: Date? = null
+                    try {
+                        date = fmt.parse(time)
+                    } catch (e: ParseException) {
+                        e.printStackTrace()
+                    }
+                    val fmtOut = SimpleDateFormat("hh:mm:ss")
+                    val formattedTime = fmtOut.format(date)
+                    text.setText(formattedTime)
+                }, hour, minute, false
+            )
+            mTimePicker.show()
         }
 
         fun Fragment.hideKeyboard() {

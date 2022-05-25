@@ -7,6 +7,8 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.navigation.Navigation
 import androidx.recyclerview.widget.RecyclerView
+import com.snakes.awt_android.Activities.AddDasterKhawanActivity
+import com.snakes.awt_android.Activities.AdminDasterKhawanActivity
 import com.snakes.awt_android.Activities.AdminServiceActivity
 import com.snakes.awt_android.Fragments.Platforms
 import com.snakes.awt_android.R
@@ -17,8 +19,6 @@ class AdminPlatformsAdapter(
     private var platformList: ArrayList<Platforms>,
     private var context: Context
 ): RecyclerView.Adapter<AdminPlatformsAdapter.Holder>() {
-
-
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): Holder {
         val binding: ItemPlatformBinding = ItemPlatformBinding.inflate(LayoutInflater.from(parent.context),parent,false)
@@ -36,18 +36,13 @@ class AdminPlatformsAdapter(
     inner class Holder(
         binding: ItemPlatformBinding
     ):RecyclerView.ViewHolder(binding.root){
-
         var binding: ItemPlatformBinding = binding
-
         fun bind(position: Int) {
-
             binding.apply {
                 val platforms = platformList[position]
                 ivImage.setImageResource(platforms.icon)
                 card.setBackgroundColor(Color.parseColor(platforms.backgroundColor))
                 tvPlatformName.text = platforms.title
-
-
                 itemView.setOnClickListener {
                     when(position){
                         0 ->{
@@ -56,11 +51,11 @@ class AdminPlatformsAdapter(
                         1 ->{
                             context.startActivity(Intent(context, AdminServiceActivity::class.java))
                         }
+                        4 ->{
+                            context.startActivity(Intent(context, AdminDasterKhawanActivity::class.java))
+                        }
                     }
                 }
-
-
-
             }
 
         }

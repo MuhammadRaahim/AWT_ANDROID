@@ -14,6 +14,7 @@ class Constants {
         const val LOGOUT = "logout"
         const val SPLASH_DISPLAY_LENGTH = 4500
         const val SERVICE_OBJECT = "service"
+        const val DASTERKHAWAN_OBJECT = "dasterKhawan"
         const val PHONE_NUMBER = "phone number"
         const val emailAwt = "info@allahwalaytrust.org.pk"
         const val urlWebView: String = "webViewUrl"

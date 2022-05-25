@@ -85,6 +85,7 @@
     <string name="str_end_time">End Time</string>
     <string name="str_location">Location</string>
     <string name="str_add_dasterkhawan">Add DasterKhawan</string>
+    <string name="str_fields_require">Field is required!</string>
 
 
 </resources>

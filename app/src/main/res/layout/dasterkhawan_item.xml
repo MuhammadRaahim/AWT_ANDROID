@@ -37,6 +37,7 @@
                 app:cardBackgroundColor="@color/white"
                 app:cardCornerRadius="@dimen/_20sdp"
                 app:cardElevation="@dimen/_30sdp"
+                android:visibility="gone"
                 android:layout_marginTop="@dimen/_10sdp"
                 app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintEnd_toEndOf="parent">

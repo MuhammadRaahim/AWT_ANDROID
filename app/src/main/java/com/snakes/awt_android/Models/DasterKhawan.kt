@@ -1,16 +1,17 @@
 package com.snakes.awt_android.Models
 
+import java.io.Serializable
+
 data class DasterKhawan(
-    var id:Int,
-    var dSName:String,
-    var Image: String,
-    var city: String,
-    var area: String,
-    var locationLong: String,
-    var StartTime: String,
-    var profimage: String,
-    var locationLat: String,
-    var EndTime: String,
-    var Date: String,
-    var description: String
-)
+    var id:String? = null,
+    var name:String? = null,
+    var description: String? = null,
+    var date: String? = null,
+    var startTime: String? = null,
+    var endTime: String? = null,
+    var locatoion: String? = null,
+    var lat: Double? = null,
+    var long: Double? = null,
+    var details: String? = null,
+    var photo: String? = null
+): Serializable

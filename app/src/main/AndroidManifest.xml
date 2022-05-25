@@ -25,6 +25,12 @@
         tools:ignore="AllowBackup"
         tools:targetApi="m">
         <activity
+            android:name=".Activities.DasterKhawanDetailsActivity"
+            android:exported="false" />
+        <activity
+            android:name=".Activities.AdminDasterKhawanActivity"
+            android:exported="false" />
+        <activity
             android:name=".Activities.AddDasterKhawanActivity"
             android:exported="false" />
         <activity
