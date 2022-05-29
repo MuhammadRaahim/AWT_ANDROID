@@ -25,6 +25,12 @@
         tools:ignore="AllowBackup"
         tools:targetApi="m">
         <activity
+            android:name=".Activities.AdminStaffActivity"
+            android:exported="false" />
+        <activity
+            android:name=".Activities.AdminAddStaffActivity"
+            android:exported="false" />
+        <activity
             android:name=".Activities.DasterKhawanDetailsActivity"
             android:exported="false" />
         <activity
@@ -35,9 +41,6 @@
             android:exported="false" />
         <activity
             android:name=".Activities.ServiceDetailActivity"
-            android:exported="false" />
-        <activity
-            android:name=".Activities.MainActivity2"
             android:exported="false" />
         <activity
             android:name=".Activities.CreateServiceActivity"

@@ -7,6 +7,7 @@ class Constants {
         const val Admin_DATABASE_ROOT = "Admin"
         const val SERVICE_DATABASE_ROOT = "Service"
         const val DASTERKHAWAN_DATABASE_ROOT = "DasterKhawan"
+        const val STAFF_DATABASE_ROOT = "Staff"
         const val PREF_NAME = "AWT"
         const val SESSION = "session"
         const val USER = "user"

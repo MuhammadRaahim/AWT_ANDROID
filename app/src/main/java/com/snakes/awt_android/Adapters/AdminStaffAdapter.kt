@@ -9,22 +9,25 @@ import com.horizam.skbhub.Utils.Constants.Companion.DASTERKHAWAN_OBJECT
 import com.horizam.skbhub.Utils.Constants.Companion.SERVICE_OBJECT
 import com.snakes.awt_android.Activities.DasterKhawanDetailsActivity
 import com.snakes.awt_android.Activities.ServiceDetailActivity
+import com.snakes.awt_android.Models.Admin
 import com.snakes.awt_android.Models.DasterKhawan
 import com.snakes.awt_android.Models.Service
+import com.snakes.awt_android.Models.User
 import com.snakes.awt_android.R
 import com.snakes.awt_android.databinding.DasterkhawanItemBinding
 import com.snakes.awt_android.databinding.ServiceItemBinding
+import com.snakes.awt_android.databinding.StaffItemBinding
 import java.io.Serializable
 
 
-class AdminDasterKhawanAdapter(
+class AdminStaffAdapter(
 
-    private var daterKhawanList: ArrayList<DasterKhawan>
+    private var staffList: ArrayList<Admin>
 
-): RecyclerView.Adapter<AdminDasterKhawanAdapter.Holder>() {
+): RecyclerView.Adapter<AdminStaffAdapter.Holder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): Holder {
-        val binding: DasterkhawanItemBinding = DasterkhawanItemBinding.inflate(LayoutInflater.from(parent.context),parent,false)
+        val binding: StaffItemBinding = StaffItemBinding.inflate(LayoutInflater.from(parent.context),parent,false)
         return Holder(binding)
     }
 
@@ -33,37 +36,33 @@ class AdminDasterKhawanAdapter(
     }
 
     override fun getItemCount(): Int {
-        return daterKhawanList.size
+        return staffList.size
     }
 
     @SuppressLint("NotifyDataSetChanged")
-    fun updateList(list: ArrayList<DasterKhawan>){
-        daterKhawanList = list
+    fun updateList(list: ArrayList<Admin>){
+        staffList = list
         notifyDataSetChanged()
     }
 
     inner class Holder(
-        binding: DasterkhawanItemBinding
+         var binding:StaffItemBinding
     ):RecyclerView.ViewHolder(binding.root){
-
-        var binding: DasterkhawanItemBinding = binding
 
         fun bind(position: Int) {
 
-            val dasterKhawan = daterKhawanList[position]
+            val staff = staffList[position]
 
-            Glide.with(itemView.context).load(dasterKhawan.photo)
+            Glide.with(itemView.context).load(staff.profileImage)
                 .placeholder(R.drawable.img_profile_cover_placeholder)
-                .into(binding.ivEvent)
-            binding.tvEventTitle.text = dasterKhawan.name
-            binding.tvLocation.text = dasterKhawan.locatoion
-            binding.tvDate.text = dasterKhawan.date
+                .into(binding.ivIcon)
+            binding.tvTittle.text = staff.userName
 
-            itemView.setOnClickListener {
-                val intent = Intent(itemView.context, DasterKhawanDetailsActivity::class.java)
-                intent.putExtra(DASTERKHAWAN_OBJECT, dasterKhawan as Serializable)
-                itemView.context.startActivity(intent)
-            }
+//            itemView.setOnClickListener {
+//                val intent = Intent(itemView.context, DasterKhawanDetailsActivity::class.java)
+//                intent.putExtra(DASTERKHAWAN_OBJECT, dasterKhawan as Serializable)
+//                itemView.context.startActivity(intent)
+//            }
 
         }
 

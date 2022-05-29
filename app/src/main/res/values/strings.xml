@@ -86,6 +86,9 @@
     <string name="str_location">Location</string>
     <string name="str_add_dasterkhawan">Add DasterKhawan</string>
     <string name="str_fields_require">Field is required!</string>
+    <string name="str_duration">Duration</string>
+    <string name="str_save_staff">Save Staff</string>
+    <string name="str_staff">Staff</string>
 
 
 </resources>
