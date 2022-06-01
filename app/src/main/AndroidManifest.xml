@@ -25,6 +25,12 @@
         tools:ignore="AllowBackup"
         tools:targetApi="m">
         <activity
+            android:name=".AdminSchoolActivity"
+            android:exported="false" />
+        <activity
+            android:name=".Activities.AdminStaffDetailsActivity"
+            android:exported="false" />
+        <activity
             android:name=".Activities.AdminStaffActivity"
             android:exported="false" />
         <activity

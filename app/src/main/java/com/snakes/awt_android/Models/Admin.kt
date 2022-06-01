@@ -1,6 +1,8 @@
 package com.snakes.awt_android.Models
 
- data class Admin(
+import java.io.Serializable
+
+data class Admin(
      var id: String? = null,
      var userName: String? = null,
      var cnic: String? = null,
@@ -9,4 +11,5 @@ package com.snakes.awt_android.Models
      var email: String? = null,
      var referralCode: String? = null,
      var profileImage: String? = null
- )
+
+ ): Serializable

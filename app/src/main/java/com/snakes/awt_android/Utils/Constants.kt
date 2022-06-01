@@ -7,6 +7,7 @@ class Constants {
         const val Admin_DATABASE_ROOT = "Admin"
         const val SERVICE_DATABASE_ROOT = "Service"
         const val DASTERKHAWAN_DATABASE_ROOT = "DasterKhawan"
+        const val SCHOOL_DATABASE_ROOT = "Schools"
         const val STAFF_DATABASE_ROOT = "Staff"
         const val PREF_NAME = "AWT"
         const val SESSION = "session"
@@ -16,6 +17,7 @@ class Constants {
         const val SPLASH_DISPLAY_LENGTH = 4500
         const val SERVICE_OBJECT = "service"
         const val DASTERKHAWAN_OBJECT = "dasterKhawan"
+        const val STAFF = "staff"
         const val PHONE_NUMBER = "phone number"
         const val emailAwt = "info@allahwalaytrust.org.pk"
         const val urlWebView: String = "webViewUrl"

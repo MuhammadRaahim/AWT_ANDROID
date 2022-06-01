@@ -11,25 +11,23 @@ import com.horizam.skbhub.Utils.Constants.Companion.STAFF
 import com.snakes.awt_android.Activities.AdminStaffDetailsActivity
 import com.snakes.awt_android.Activities.DasterKhawanDetailsActivity
 import com.snakes.awt_android.Activities.ServiceDetailActivity
-import com.snakes.awt_android.Models.Admin
-import com.snakes.awt_android.Models.DasterKhawan
-import com.snakes.awt_android.Models.Service
-import com.snakes.awt_android.Models.User
+import com.snakes.awt_android.Models.*
 import com.snakes.awt_android.R
 import com.snakes.awt_android.databinding.DasterkhawanItemBinding
+import com.snakes.awt_android.databinding.SchoolKhanaItemBinding
 import com.snakes.awt_android.databinding.ServiceItemBinding
 import com.snakes.awt_android.databinding.StaffItemBinding
 import java.io.Serializable
 
 
-class AdminStaffAdapter(
+class AdminSchoolAdapter(
 
-    private var staffList: ArrayList<Admin>
+    private var schoolList: ArrayList<SchoolKhana>
 
-): RecyclerView.Adapter<AdminStaffAdapter.Holder>() {
+): RecyclerView.Adapter<AdminSchoolAdapter.Holder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): Holder {
-        val binding: StaffItemBinding = StaffItemBinding.inflate(LayoutInflater.from(parent.context),parent,false)
+        val binding: SchoolKhanaItemBinding = SchoolKhanaItemBinding.inflate(LayoutInflater.from(parent.context),parent,false)
         return Holder(binding)
     }
 
@@ -38,32 +36,35 @@ class AdminStaffAdapter(
     }
 
     override fun getItemCount(): Int {
-        return staffList.size
+        return schoolList.size
     }
 
     @SuppressLint("NotifyDataSetChanged")
-    fun updateList(list: ArrayList<Admin>){
-        staffList = list
+    fun updateList(list: ArrayList<SchoolKhana>){
+        schoolList = list
         notifyDataSetChanged()
     }
 
     inner class Holder(
-         var binding:StaffItemBinding
+         var binding:SchoolKhanaItemBinding
     ):RecyclerView.ViewHolder(binding.root){
 
         fun bind(position: Int) {
 
-            val staff = staffList[position]
+            val school = schoolList[position]
 
-            Glide.with(itemView.context).load(staff.profileImage)
+
+            Glide.with(itemView.context).load(school.photo)
                 .placeholder(R.drawable.img_profile_cover_placeholder)
-                .into(binding.ivIcon)
-            binding.tvTittle.text = staff.userName
+                .into(binding.ivImage)
+            binding.tvName.text = school.name
+            binding.tvLocation.text = school.locatoion
+            binding.tvTime.text = "${school.startTime} pm to ${school.endTime} pm"
 
             itemView.setOnClickListener {
-                val intent = Intent(itemView.context, AdminStaffDetailsActivity::class.java)
-                intent.putExtra(STAFF, staff as Serializable)
-                itemView.context.startActivity(intent)
+//                val intent = Intent(itemView.context, DasterKhawanDetailsActivity::class.java)
+//                intent.putExtra(DASTERKHAWAN_OBJECT, school as Serializable)
+//                itemView.context.startActivity(intent)
             }
 
         }
