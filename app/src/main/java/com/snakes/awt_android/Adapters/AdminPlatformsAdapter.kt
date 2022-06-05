@@ -7,10 +7,7 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.navigation.Navigation
 import androidx.recyclerview.widget.RecyclerView
-import com.snakes.awt_android.Activities.AddDasterKhawanActivity
-import com.snakes.awt_android.Activities.AdminDasterKhawanActivity
-import com.snakes.awt_android.Activities.AdminServiceActivity
-import com.snakes.awt_android.Activities.AdminStaffActivity
+import com.snakes.awt_android.Activities.*
 import com.snakes.awt_android.Fragments.Platforms
 import com.snakes.awt_android.R
 import com.snakes.awt_android.databinding.ItemPlatformBinding
@@ -55,8 +52,14 @@ class AdminPlatformsAdapter(
                         2 ->{
                             context.startActivity(Intent(context, AdminStaffActivity::class.java))
                         }
+                        3 ->{
+                            context.startActivity(Intent(context, AnalyticsActivity::class.java))
+                        }
                         4 ->{
                             context.startActivity(Intent(context, AdminDasterKhawanActivity::class.java))
+                        }
+                        5 ->{
+                            context.startActivity(Intent(context, AdminSchoolActivity::class.java))
                         }
                     }
                 }

@@ -44,7 +44,7 @@ class AdminDashBoardFragment : Fragment() {
                 FirebaseAuth.getInstance().signOut()
                 manager.session = Constants.LOGOUT
                 startActivity(Intent(requireContext(), AuthActivity::class.java))
-                activity!!.finish()
+                requireActivity().finish()
             }
         }
     }

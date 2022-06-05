@@ -6,7 +6,6 @@ data class SchoolKhana(
     var id:String? = null,
     var name:String? = null,
     var description: String? = null,
-    var date: String? = null,
     var startTime: String? = null,
     var endTime: String? = null,
     var locatoion: String? = null,

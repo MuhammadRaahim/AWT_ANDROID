@@ -6,8 +6,10 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.horizam.skbhub.Utils.Constants.Companion.DASTERKHAWAN_OBJECT
+import com.horizam.skbhub.Utils.Constants.Companion.SCHOOLKHANA_OBJECT
 import com.horizam.skbhub.Utils.Constants.Companion.SERVICE_OBJECT
 import com.horizam.skbhub.Utils.Constants.Companion.STAFF
+import com.snakes.awt_android.Activities.AdminSchoolDetailsActivity
 import com.snakes.awt_android.Activities.AdminStaffDetailsActivity
 import com.snakes.awt_android.Activities.DasterKhawanDetailsActivity
 import com.snakes.awt_android.Activities.ServiceDetailActivity
@@ -62,9 +64,9 @@ class AdminSchoolAdapter(
             binding.tvTime.text = "${school.startTime} pm to ${school.endTime} pm"
 
             itemView.setOnClickListener {
-//                val intent = Intent(itemView.context, DasterKhawanDetailsActivity::class.java)
-//                intent.putExtra(DASTERKHAWAN_OBJECT, school as Serializable)
-//                itemView.context.startActivity(intent)
+                val intent = Intent(itemView.context, AdminSchoolDetailsActivity::class.java)
+                intent.putExtra(SCHOOLKHANA_OBJECT, school as Serializable)
+                itemView.context.startActivity(intent)
             }
 
         }

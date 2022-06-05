@@ -17,6 +17,7 @@ class Constants {
         const val SPLASH_DISPLAY_LENGTH = 4500
         const val SERVICE_OBJECT = "service"
         const val DASTERKHAWAN_OBJECT = "dasterKhawan"
+        const val SCHOOLKHANA_OBJECT = "schoolkhana"
         const val STAFF = "staff"
         const val PHONE_NUMBER = "phone number"
         const val emailAwt = "info@allahwalaytrust.org.pk"
@@ -25,6 +26,8 @@ class Constants {
         const val awtFacebookUrl: String = "https://www.facebook.com/AllahWalayTrust/"
         const val awtLinkedinUrl: String = "https://www.linkedin.com/company/allah-walay-trust/about/"
         const val awtAboutUsUrl: String = "https://allahwalaytrust.org.pk/about-us/"
+        const val awtOurProjectsUrl: String = "https://allahwalaytrust.org.pk/our-projects/"
+        const val awtOrphanHouseUrl: String = "https://allahwalaytrust.org.pk/orphan-house/"
 
     }
 }

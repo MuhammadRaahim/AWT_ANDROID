@@ -25,7 +25,16 @@
         tools:ignore="AllowBackup"
         tools:targetApi="m">
         <activity
-            android:name=".AdminSchoolActivity"
+            android:name=".Activities.AnalyticsActivity"
+            android:exported="false" />
+        <activity
+            android:name=".Activities.AdminSchoolDetailsActivity"
+            android:exported="false" />
+        <activity
+            android:name=".Activities.AdminAddSchoolActivity"
+            android:exported="false" />
+        <activity
+            android:name=".Activities.AdminSchoolActivity"
             android:exported="false" />
         <activity
             android:name=".Activities.AdminStaffDetailsActivity"
@@ -57,11 +66,9 @@
         <activity
             android:name=".Activities.AdminActivity"
             android:exported="false" />
-
         <meta-data
             android:name="com.google.android.geo.API_KEY"
             android:value="@string/API_KEY" />
-
         <activity
             android:name=".Activities.WebActivity"
             android:exported="false" />

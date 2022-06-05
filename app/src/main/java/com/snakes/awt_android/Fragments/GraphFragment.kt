@@ -141,7 +141,7 @@ class GraphFragment : Fragment() {
         return binding.root
     }
 
-    private class CustomDataEntry internal constructor(
+    public class CustomDataEntry internal constructor(
         x: String?,
         value: Number?,
         value2: Number?,

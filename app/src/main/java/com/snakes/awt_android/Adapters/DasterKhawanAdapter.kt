@@ -1,14 +1,18 @@
 package com.snakes.awt_android.Adapters
+import android.annotation.SuppressLint
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import android.widget.AdapterView
 import androidx.recyclerview.widget.RecyclerView
+import com.bumptech.glide.Glide
 import com.snakes.awt_android.CallBacks.OnItemClickListener
+import com.snakes.awt_android.Models.DasterKhawan
+import com.snakes.awt_android.R
 import com.snakes.awt_android.databinding.DasterkhawanItemBinding
 
 
 class DasterKhawanAdapter(
-
+    private var daterKhawanList: ArrayList<DasterKhawan>,
     var onItemClickListener: OnItemClickListener
 
 ): RecyclerView.Adapter<DasterKhawanAdapter.Holder>() {
@@ -23,17 +27,31 @@ class DasterKhawanAdapter(
     }
 
     override fun getItemCount(): Int {
-        return 7
+        return daterKhawanList.size
+    }
+
+    @SuppressLint("NotifyDataSetChanged")
+    fun updateList(list: ArrayList<DasterKhawan>){
+        daterKhawanList = list
+        notifyDataSetChanged()
     }
 
     inner class Holder(
-        binding: DasterkhawanItemBinding
+       var binding: DasterkhawanItemBinding
     ):RecyclerView.ViewHolder(binding.root){
 
-        var binding: DasterkhawanItemBinding = binding
-
         fun bind(position: Int) {
-          itemView.setOnClickListener {
+
+            val dasterKhawan = daterKhawanList[position]
+
+            Glide.with(itemView.context).load(dasterKhawan.photo)
+                .placeholder(R.drawable.img_profile_cover_placeholder)
+                .into(binding.ivEvent)
+            binding.tvEventTitle.text = dasterKhawan.name
+            binding.tvLocation.text = dasterKhawan.locatoion
+            binding.tvDate.text = dasterKhawan.date
+
+            itemView.setOnClickListener {
               onItemClickListener.onItemClick()
           }
         }

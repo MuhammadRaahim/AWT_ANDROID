@@ -42,13 +42,17 @@
         <entry key="..\:/Users/Dell/Documents/GitHub/AWT_ANDROID/app/src/main/res/drawable/ic_search.xml" value="0.19375" />
         <entry key="..\:/Users/Dell/Documents/GitHub/AWT_ANDROID/app/src/main/res/layout/Service_item.xml" value="0.1734375" />
         <entry key="..\:/Users/Dell/Documents/GitHub/AWT_ANDROID/app/src/main/res/layout/activity_add_daster_khawan.xml" value="0.22" />
+        <entry key="..\:/Users/Dell/Documents/GitHub/AWT_ANDROID/app/src/main/res/layout/activity_add_staff.xml" value="0.1734375" />
         <entry key="..\:/Users/Dell/Documents/GitHub/AWT_ANDROID/app/src/main/res/layout/activity_admin.xml" value="0.1734375" />
+        <entry key="..\:/Users/Dell/Documents/GitHub/AWT_ANDROID/app/src/main/res/layout/activity_admin_add_school.xml" value="0.1734375" />
         <entry key="..\:/Users/Dell/Documents/GitHub/AWT_ANDROID/app/src/main/res/layout/activity_admin_add_staff.xml" value="0.1734375" />
         <entry key="..\:/Users/Dell/Documents/GitHub/AWT_ANDROID/app/src/main/res/layout/activity_admin_daster_khawan.xml" value="0.1734375" />
         <entry key="..\:/Users/Dell/Documents/GitHub/AWT_ANDROID/app/src/main/res/layout/activity_admin_school.xml" value="0.1734375" />
+        <entry key="..\:/Users/Dell/Documents/GitHub/AWT_ANDROID/app/src/main/res/layout/activity_admin_school_deatails.xml" value="0.15625" />
         <entry key="..\:/Users/Dell/Documents/GitHub/AWT_ANDROID/app/src/main/res/layout/activity_admin_service.xml" value="0.1734375" />
         <entry key="..\:/Users/Dell/Documents/GitHub/AWT_ANDROID/app/src/main/res/layout/activity_admin_staff.xml" value="0.1734375" />
         <entry key="..\:/Users/Dell/Documents/GitHub/AWT_ANDROID/app/src/main/res/layout/activity_admin_staff_deatails.xml" value="0.1734375" />
+        <entry key="..\:/Users/Dell/Documents/GitHub/AWT_ANDROID/app/src/main/res/layout/activity_analytics.xml" value="0.1734375" />
         <entry key="..\:/Users/Dell/Documents/GitHub/AWT_ANDROID/app/src/main/res/layout/activity_auth.xml" value="0.1734375" />
         <entry key="..\:/Users/Dell/Documents/GitHub/AWT_ANDROID/app/src/main/res/layout/activity_create_service.xml" value="0.2" />
         <entry key="..\:/Users/Dell/Documents/GitHub/AWT_ANDROID/app/src/main/res/layout/activity_daster_khawan_details.xml" value="0.21" />
@@ -56,8 +60,10 @@
         <entry key="..\:/Users/Dell/Documents/GitHub/AWT_ANDROID/app/src/main/res/layout/activity_service_detail.xml" value="0.15" />
         <entry key="..\:/Users/Dell/Documents/GitHub/AWT_ANDROID/app/src/main/res/layout/activity_splash.xml" value="0.1734375" />
         <entry key="..\:/Users/Dell/Documents/GitHub/AWT_ANDROID/app/src/main/res/layout/activity_web.xml" value="0.13645833333333332" />
+        <entry key="..\:/Users/Dell/Documents/GitHub/AWT_ANDROID/app/src/main/res/layout/dasterkhawan_admin_item.xml" value="0.1734375" />
         <entry key="..\:/Users/Dell/Documents/GitHub/AWT_ANDROID/app/src/main/res/layout/dasterkhawan_item.xml" value="0.1734375" />
         <entry key="..\:/Users/Dell/Documents/GitHub/AWT_ANDROID/app/src/main/res/layout/dialog_file_uploading.xml" value="0.1734375" />
+        <entry key="..\:/Users/Dell/Documents/GitHub/AWT_ANDROID/app/src/main/res/layout/dialog_no_internet.xml" value="0.1734375" />
         <entry key="..\:/Users/Dell/Documents/GitHub/AWT_ANDROID/app/src/main/res/layout/fragment_admin_dash_board.xml" value="0.1734375" />
         <entry key="..\:/Users/Dell/Documents/GitHub/AWT_ANDROID/app/src/main/res/layout/fragment_admin_login.xml" value="0.15625" />
         <entry key="..\:/Users/Dell/Documents/GitHub/AWT_ANDROID/app/src/main/res/layout/fragment_admin_otp.xml" value="0.1734375" />

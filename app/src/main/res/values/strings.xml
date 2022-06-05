@@ -90,6 +90,12 @@
     <string name="str_save_staff">Save Staff</string>
     <string name="str_staff">Staff</string>
     <string name="str_school_khana">School Khana</string>
+    <string name="str_add_school">Add School</string>
+    <string name="str_school_name">School Name</string>
+    <string name="str_no_internet">No Internet</string>
+    <string name="str_please_check_your_connection_status_and_try_again">Please check your connection status and try again</string>
+    <string name="str_retry">Retry</string>
+    <string name="str_close">Close</string>
 
 
 </resources>

@@ -12,6 +12,7 @@ import com.snakes.awt_android.Activities.ServiceDetailActivity
 import com.snakes.awt_android.Models.DasterKhawan
 import com.snakes.awt_android.Models.Service
 import com.snakes.awt_android.R
+import com.snakes.awt_android.databinding.DasterkhawanAdminItemBinding
 import com.snakes.awt_android.databinding.DasterkhawanItemBinding
 import com.snakes.awt_android.databinding.ServiceItemBinding
 import java.io.Serializable
@@ -24,7 +25,7 @@ class AdminDasterKhawanAdapter(
 ): RecyclerView.Adapter<AdminDasterKhawanAdapter.Holder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): Holder {
-        val binding: DasterkhawanItemBinding = DasterkhawanItemBinding.inflate(LayoutInflater.from(parent.context),parent,false)
+        val binding: DasterkhawanAdminItemBinding = DasterkhawanAdminItemBinding.inflate(LayoutInflater.from(parent.context),parent,false)
         return Holder(binding)
     }
 
@@ -43,10 +44,9 @@ class AdminDasterKhawanAdapter(
     }
 
     inner class Holder(
-        binding: DasterkhawanItemBinding
+        var binding: DasterkhawanAdminItemBinding
     ):RecyclerView.ViewHolder(binding.root){
 
-        var binding: DasterkhawanItemBinding = binding
 
         fun bind(position: Int) {
 

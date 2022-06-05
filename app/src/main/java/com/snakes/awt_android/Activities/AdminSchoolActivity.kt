@@ -3,6 +3,8 @@ package com.snakes.awt_android.Activities
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.core.view.isVisible
+import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.google.android.gms.maps.model.LatLng
@@ -20,7 +22,9 @@ import com.snakes.awt_android.Adapters.AdminSchoolAdapter
 import com.snakes.awt_android.Adapters.SchoolKhanaAdapter
 import com.snakes.awt_android.Models.DasterKhawan
 import com.snakes.awt_android.Models.SchoolKhana
+import com.snakes.awt_android.Utils.BaseUtils
 import com.snakes.awt_android.databinding.ActivityAdminSchoolBinding
+import java.lang.Exception
 
 class AdminSchoolActivity : AppCompatActivity() {
 
@@ -41,9 +45,14 @@ class AdminSchoolActivity : AppCompatActivity() {
         setClickListeners()
     }
 
+    override fun onResume() {
+        super.onResume()
+        getSchoolKhawan()
+    }
+
     private fun setClickListeners() {
         binding.fabAddService.setOnClickListener {
-            startActivity(Intent(this,AddDasterKhawanActivity::class.java))
+            startActivity(Intent(this,AdminAddSchoolActivity::class.java))
         }
         binding.ivBack.setOnClickListener {
             onBackPressed()
@@ -58,8 +67,38 @@ class AdminSchoolActivity : AppCompatActivity() {
     }
 
     private fun setSchoolRecyclerView() {
-        binding.rvSchool.layoutManager =  LinearLayoutManager(this,  RecyclerView.VERTICAL, false)
+        binding.rvSchool.layoutManager =  GridLayoutManager(this,2,  RecyclerView.VERTICAL, false)
         adapter = AdminSchoolAdapter(schoolList)
         binding.rvSchool.adapter = adapter
+    }
+
+    private fun getSchoolKhawan() {
+        schoolList.clear()
+        binding.progressLayout.isVisible = true
+        schoolReference.get().addOnSuccessListener { documentSnapshots ->
+            for (documentSnapshot in documentSnapshots) {
+                val service = documentSnapshot.toObject(SchoolKhana::class.java)
+                try {
+                    schoolList.add(service)
+
+                } catch (ex: Exception) {
+                    binding.progressLayout.isVisible = false
+                    BaseUtils.showMessage(findViewById(android.R.id.content), ex.message.toString())
+                }
+            }
+            if (schoolList.isNotEmpty()) {
+                adapter.updateList(schoolList)
+                binding.rvSchool.isVisible = true
+                binding.tvNoData.isVisible = false
+            } else {
+                binding.rvSchool.isVisible = false
+                binding.tvNoData.isVisible = true
+            }
+            binding.progressLayout.isVisible = false
+
+        }.addOnFailureListener {
+            binding.progressLayout.isVisible = false
+            BaseUtils.showMessage(findViewById(android.R.id.content), it.message.toString())
+        }
     }
 }
