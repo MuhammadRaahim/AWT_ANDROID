@@ -8,6 +8,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.core.content.ContextCompat
 import androidx.core.content.res.ResourcesCompat
+import androidx.core.os.bundleOf
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
@@ -22,6 +23,7 @@ import com.google.firebase.firestore.ktx.firestore
 import com.google.firebase.ktx.Firebase
 import com.horizam.skbhub.Utils.Constants
 import com.horizam.skbhub.Utils.Constants.Companion.DASTERKHAWAN_DATABASE_ROOT
+import com.horizam.skbhub.Utils.Constants.Companion.DASTERKHAWAN_OBJECT
 import com.horizam.skbhub.Utils.Constants.Companion.SCHOOL_DATABASE_ROOT
 import com.horizam.skbhub.Utils.Constants.Companion.SERVICE_DATABASE_ROOT
 import com.jdars.shared_online_business.CallBacks.DrawerHandler
@@ -222,8 +224,12 @@ class HomeFragment : Fragment(), OnItemClickListener {
         binding.imageSlider.setImageList(imageList)
     }
 
-    override fun onItemClick() {
-        findNavController().navigate(R.id.navigation_maps)
+    override fun <T> onItemClick(item: T) {
+        if (item is DasterKhawan){
+            val bundle = bundleOf(DASTERKHAWAN_OBJECT to item)
+            findNavController().navigate(R.id.navigation_maps,bundle)
+        }
+
     }
 
 

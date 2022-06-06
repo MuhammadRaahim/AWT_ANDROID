@@ -95,12 +95,15 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tv_time"/>
     <com.google.android.material.button.MaterialButton
+        android:id="@+id/btn_direction"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="@string/str_direction"
         android:textSize="@dimen/_14ssp"
         app:cornerRadius="@dimen/_35sdp"
         android:padding="@dimen/_8sdp"
+        android:textColor="@color/white"
+        android:backgroundTint="@color/app_color"
         android:layout_marginVertical="@dimen/_10sdp"
         android:layout_marginHorizontal="@dimen/_50sdp"
         app:layout_constraintTop_toBottomOf="@+id/tv_description"/>

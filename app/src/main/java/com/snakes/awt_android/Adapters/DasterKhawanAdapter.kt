@@ -52,7 +52,7 @@ class DasterKhawanAdapter(
             binding.tvDate.text = dasterKhawan.date
 
             itemView.setOnClickListener {
-              onItemClickListener.onItemClick()
+              onItemClickListener.onItemClick(dasterKhawan)
           }
         }
 
