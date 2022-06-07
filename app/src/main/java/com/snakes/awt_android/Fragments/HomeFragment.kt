@@ -1,6 +1,7 @@
 package com.snakes.awt_android.Fragments
 
 import android.content.Context
+import android.content.Intent
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -27,6 +28,7 @@ import com.horizam.skbhub.Utils.Constants.Companion.DASTERKHAWAN_OBJECT
 import com.horizam.skbhub.Utils.Constants.Companion.SCHOOL_DATABASE_ROOT
 import com.horizam.skbhub.Utils.Constants.Companion.SERVICE_DATABASE_ROOT
 import com.jdars.shared_online_business.CallBacks.DrawerHandler
+import com.snakes.awt_android.Activities.DonateActivity
 import com.snakes.awt_android.Adapters.DasterKhawanAdapter
 import com.snakes.awt_android.Adapters.SchoolKhanaAdapter
 import com.snakes.awt_android.Adapters.ServicesAdapter
@@ -79,8 +81,6 @@ class HomeFragment : Fragment(), OnItemClickListener {
 
         return binding.root
     }
-
-
 
     private fun initViews() {
         servicesList = ArrayList()
@@ -157,6 +157,7 @@ class HomeFragment : Fragment(), OnItemClickListener {
                     genericHandler.showProgressBar(true)
                     genericHandler.showMessage(ex.message.toString())
                 }
+                genericHandler.showProgressBar(false)
             }
             if (servicesList.isNotEmpty()){
                 servicesAdapter.updateList(servicesList)
@@ -193,6 +194,9 @@ class HomeFragment : Fragment(), OnItemClickListener {
             }
             toolbar.ivToolbar.setOnClickListener {
                 drawerHandlerCallback.openDrawer()
+            }
+            toolbar.ivDonate.setOnClickListener {
+                startActivity(Intent(requireContext(),DonateActivity::class.java))
             }
 
         }

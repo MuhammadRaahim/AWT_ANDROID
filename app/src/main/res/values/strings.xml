@@ -96,6 +96,15 @@
     <string name="str_please_check_your_connection_status_and_try_again">Please check your connection status and try again</string>
     <string name="str_retry">Retry</string>
     <string name="str_close">Close</string>
+    <string name="str_name">Name</string>
+    <string name="str_credit_card_number">Credit Card Number</string>
+    <string name="str_expire">Expire</string>
+    <string name="str_expire_date">expire date</string>
+    <string name="str_cvv">CVV</string>
+    <string name="str_donate">Donate</string>
+    <string name="str_amount">Amount</string>
+    <string name="str_turn_on_nfc">NFC is Off</string>
+    <string name="str_no_nfc_support">No NFC Support</string>
 
 
 </resources>

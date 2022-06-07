@@ -75,6 +75,7 @@ class AdminProfileFragment : Fragment() {
                         val user = document.toObject(Admin::class.java)
                         setData(user)
                     }
+                    genericHandler.showProgressBar(false)
                 }else{
                     genericHandler.showProgressBar(false)
                     genericHandler.showMessage(it.exception.toString())

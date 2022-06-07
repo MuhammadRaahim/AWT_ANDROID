@@ -11,6 +11,7 @@ import android.content.pm.PackageManager
 import android.graphics.Color
 import android.location.Location
 import android.location.LocationManager
+import android.net.Uri
 import android.os.AsyncTask
 import android.os.Bundle
 import android.provider.Settings
@@ -339,16 +340,21 @@ class MapsFragment : Fragment(), OnMapReadyCallback {
 
     @Subscribe(threadMode = ThreadMode.MAIN)
     fun onMessageEvent(event: DirectionEvent?) {
-        mapFragment.getMapAsync {
-            mMap = it
-            val originLocation = LatLng(lastKnownLocation!!.latitude, lastKnownLocation!!.longitude)
-            mMap.addMarker(MarkerOptions().position(originLocation))
-            val destinationLocation = LatLng(dasterKhawan.lat!!, dasterKhawan.long!!)
-            mMap.addMarker(MarkerOptions().position(destinationLocation))
-            val urll = getDirectionURL(originLocation, destinationLocation, "AIzaSyCLHQbvTsrqIJ1_LknV3XOOIpoXiahTsQU")
-            GetDirection(urll).execute()
-            mMap.animateCamera(CameraUpdateFactory.newLatLngZoom(originLocation, 14F))
-        }
+        val intent = Intent(
+            Intent.ACTION_VIEW,
+            Uri.parse("http://maps.google.com/maps?saddr=${lastKnownLocation!!.latitude},${lastKnownLocation!!.longitude}&daddr=${dasterKhawan.lat},${dasterKhawan.long}")
+        )
+        startActivity(intent)
+//        mapFragment.getMapAsync {
+//            mMap = it
+//            val originLocation = LatLng(lastKnownLocation!!.latitude, lastKnownLocation!!.longitude)
+//            mMap.addMarker(MarkerOptions().position(originLocation))
+//            val destinationLocation = LatLng(dasterKhawan.lat!!, dasterKhawan.long!!)
+//            mMap.addMarker(MarkerOptions().position(destinationLocation))
+//            val urll = getDirectionURL(originLocation, destinationLocation, "AIzaSyCLHQbvTsrqIJ1_LknV3XOOIpoXiahTsQU")
+//            GetDirection(urll).execute()
+//            mMap.animateCamera(CameraUpdateFactory.newLatLngZoom(originLocation, 14F))
+//        }
     }
 
 

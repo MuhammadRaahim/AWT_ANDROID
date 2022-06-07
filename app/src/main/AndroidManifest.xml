@@ -13,6 +13,8 @@
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
     <uses-permission android:name="android.permission.CAMERA" />
 
+    <uses-permission android:name="android.permission.NFC" />
+
     <application
         android:name=".App"
         android:allowBackup="true"
@@ -24,6 +26,9 @@
         android:usesCleartextTraffic="true"
         tools:ignore="AllowBackup"
         tools:targetApi="m">
+        <activity
+            android:name=".Activities.DonateActivity"
+            android:exported="false" />
         <activity
             android:name=".Activities.AnalyticsActivity"
             android:exported="false" />
@@ -66,9 +71,15 @@
         <activity
             android:name=".Activities.AdminActivity"
             android:exported="false" />
+
         <meta-data
             android:name="com.google.android.geo.API_KEY"
             android:value="@string/API_KEY" />
+
+        <meta-data
+            android:name="android.nfc.action.TECH_DISCOVERED"
+            android:resource="@xml/nfc_tech_filter" />
+
         <activity
             android:name=".Activities.WebActivity"
             android:exported="false" />

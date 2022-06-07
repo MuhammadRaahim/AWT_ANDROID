@@ -2,6 +2,7 @@ package com.snakes.awt_android.Activities
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.core.view.isVisible
 import com.bumptech.glide.Glide
 import com.horizam.skbhub.Utils.Constants
 import com.horizam.skbhub.Utils.PrefManager
@@ -43,7 +44,9 @@ class AdminSchoolDetailsActivity : AppCompatActivity() {
             tvDetails.text = schoolKhana.details
             duration.text = "${schoolKhana.startTime} pm to ${schoolKhana.endTime} pm"
             location.text = schoolKhana.locatoion
+            btnDonate.isVisible = manager.session != Constants.ADMIN
         }
+
     }
 
     private fun setClickListeners() {

@@ -224,7 +224,7 @@ class MainActivity : AppCompatActivity(), DrawerHandler, GenericHandler{
     }
 
     override fun showProgressBar(show: Boolean) {
-        binding.layoutNoInternet.dialogParent.isVisible = show
+        binding.progressLayout.isVisible = show
     }
 
     override fun showMessage(message: String) {
