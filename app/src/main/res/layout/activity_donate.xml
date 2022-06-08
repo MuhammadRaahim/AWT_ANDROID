@@ -84,6 +84,32 @@
         android:background="@drawable/bg_edit_text"
         app:layout_constraintTop_toBottomOf="@+id/tv_amount"/>
     <TextView
+        android:id="@+id/tv_profile"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/black"
+        android:textAlignment="center"
+        android:text="Select Service"
+        android:textSize="@dimen/_12ssp"
+        android:layout_marginTop="@dimen/_10sdp"
+        android:layout_marginStart="@dimen/_12sdp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/et_amount"/>
+    <Spinner
+        android:id="@+id/spinner_type"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColor="@color/black"
+        android:padding="@dimen/_10sdp"
+        android:inputType="phone"
+        android:tooltipText="Select Service"
+        android:textSize="@dimen/_12ssp"
+        android:layout_marginTop="@dimen/_3sdp"
+        android:layout_marginHorizontal="@dimen/_10sdp"
+        android:background="@drawable/bg_edit_text"
+        app:layout_constraintTop_toBottomOf="@+id/tv_profile"
+        tools:targetApi="o" />
+    <TextView
         android:id="@+id/tv_card_number"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -94,7 +120,7 @@
         android:layout_marginTop="@dimen/_10sdp"
         android:layout_marginStart="@dimen/_12sdp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/et_amount"/>
+        app:layout_constraintTop_toBottomOf="@+id/spinner_type"/>
     <EditText
         android:id="@+id/et_card_number"
         android:layout_width="match_parent"

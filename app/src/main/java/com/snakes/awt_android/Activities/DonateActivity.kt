@@ -4,7 +4,13 @@ import android.nfc.NfcAdapter
 import android.nfc.tech.IsoDep
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.text.Editable
+import android.text.TextWatcher
 import android.util.Log
+import android.view.KeyEvent
+import android.view.View
+import android.widget.AdapterView
+import android.widget.ArrayAdapter
 import android.widget.Toast
 import androidx.core.view.isVisible
 import com.github.devnied.emvnfccard.model.EmvCard
@@ -23,6 +29,8 @@ class DonateActivity : AppCompatActivity() {
     private lateinit var binding: ActivityDonateBinding
     private lateinit var isoDep: IsoDep
     private lateinit var card: EmvCard
+    var keyDel = 0
+    var a: String? = null
 
 
     private val nfcAdapter: NfcAdapter? by lazy {
@@ -34,7 +42,36 @@ class DonateActivity : AppCompatActivity() {
         binding = ActivityDonateBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+        initViews()
+        setSpinnerListeners()
 
+
+
+    }
+
+    private fun initViews() {
+        setProfileDropDown()
+    }
+
+    private fun setSpinnerListeners() {
+        binding.spinnerType.onItemSelectedListener =
+            object : AdapterView.OnItemSelectedListener{
+                override fun onItemSelected(p0: AdapterView<*>?, p1: View?, p2: Int, p3: Long) {
+
+                }
+                override fun onNothingSelected(p0: AdapterView<*>?) {}
+            }
+    }
+
+    private fun setProfileDropDown() {
+        ArrayAdapter.createFromResource(
+            this,
+            R.array.profile_array,
+            android.R.layout.simple_spinner_item
+        ).also { adapter ->
+            adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
+            binding.spinnerType.adapter = adapter
+        }
     }
 
     override fun onResume() {
@@ -117,4 +154,5 @@ class DonateActivity : AppCompatActivity() {
         }
         return false
     }
+
 }

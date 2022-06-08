@@ -107,4 +107,12 @@
     <string name="str_no_nfc_support">No NFC Support</string>
 
 
+    <string-array name="profile_array">
+        <item>Select Service</item>
+        <item>Dasterkhawan</item>
+        <item>SchoolKhana</item>
+        <item>Other Services</item>
+    </string-array>
+
+
 </resources>
