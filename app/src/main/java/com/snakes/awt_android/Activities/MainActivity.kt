@@ -31,6 +31,7 @@ import com.horizam.skbhub.Utils.Constants.Companion.emailAwt
 import com.horizam.skbhub.Utils.PrefManager
 import com.jdars.shared_online_business.CallBacks.DrawerHandler
 import com.snakes.awt_android.Activities.AuthActivity
+import com.snakes.awt_android.Activities.DigitalCardActivity
 import com.snakes.awt_android.CallBacks.GenericHandler
 import com.snakes.awt_android.Utils.BaseUtils
 import com.snakes.awt_android.Utils.BaseUtils.Companion.loadWebView
@@ -117,6 +118,10 @@ class MainActivity : AppCompatActivity(), DrawerHandler, GenericHandler{
                 drawer.closeDrawers()
                 showMessage("App is not Publish yet!!")
 
+            }
+            navAwtTools.setOnClickListener{
+                drawer.closeDrawers()
+                startActivity(Intent(this@MainActivity,DigitalCardActivity::class.java))
             }
             navLogout.setOnClickListener {
                 logOut()

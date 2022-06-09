@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">AWT_android</string>
+    <string name="app_name">AwT</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="API_KEY">AIzaSyCsKHL9aYMkdDPUSLtcOoASZOwZ_TtMhz8</string>
     <string name="hello_blank_fragment">Hello blank fragment</string>
@@ -105,6 +105,8 @@
     <string name="str_amount">Amount</string>
     <string name="str_turn_on_nfc">NFC is Off</string>
     <string name="str_no_nfc_support">No NFC Support</string>
+    <string name="str_digital_card">Digital Card</string>
+    <string name="str_scan_the_card_for_activation">Scan the Card for activation</string>
 
 
     <string-array name="profile_array">

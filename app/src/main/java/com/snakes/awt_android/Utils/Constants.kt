@@ -9,6 +9,7 @@ class Constants {
         const val DASTERKHAWAN_DATABASE_ROOT = "DasterKhawan"
         const val SCHOOL_DATABASE_ROOT = "Schools"
         const val STAFF_DATABASE_ROOT = "Staff"
+        const val DONATION_DATABASE_ROOT = "donation"
         const val PREF_NAME = "AWT"
         const val SESSION = "session"
         const val USER = "user"

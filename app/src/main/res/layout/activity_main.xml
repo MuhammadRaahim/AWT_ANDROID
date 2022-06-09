@@ -198,6 +198,25 @@
                         android:layout_height="@dimen/_1sdp"
                         android:background="@color/grey_100"/>
                     <TextView
+                        android:id="@+id/nav_awt_tools"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_5sdp"
+                        android:drawablePadding="@dimen/_15sdp"
+                        android:gravity="center_vertical"
+                        android:padding="@dimen/_5sdp"
+                        android:text="@string/str_digital_card"
+                        android:fontFamily="@font/worksans_bold"
+                        android:textSize="@dimen/_12ssp"
+                        app:drawableStartCompat="@drawable/ic_nfc"
+                        app:drawableTint="@color/black"
+                        android:background="?attr/selectableItemBackground"
+                        tools:targetApi="m"/>
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/_1sdp"
+                        android:background="@color/grey_100"/>
+                    <TextView
                         android:id="@+id/nav_our_project"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
